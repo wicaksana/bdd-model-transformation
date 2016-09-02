@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sample:Register
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:sample="http://www.example.org/sample"
+    Name="Banking Application">
+  <stories Role=""
+      Benefit=""
+      Title="Check Account">
+    <scenarios
+        Title="Account has sufficient balance">
+      <when>
+        <sentences
+            Text="the account holder request $">
+          <variables
+              Name="20"
+              Type="Int"/>
+          <annotation
+              Text="When"
+              Type="When"/>
+        </sentences>
+      </when>
+      <given>
+        <sentences
+            Text="the account balance is $">
+          <variables
+              Name="100"
+              Type="Int"/>
+          <annotation
+              Text="Given"
+              Type="Given"/>
+        </sentences>
+      </given>
+      <then>
+        <sentences
+            Text="The ATM should dispense $">
+          <variables
+              Name="20"
+              Type="int"/>
+          <annotation
+              Text="Then"
+              Type="Then"/>
+        </sentences>
+        <sentences
+            Text="the account balance should $">
+          <variables
+              Name="80"
+              Type="int"/>
+          <annotation
+              Text="Then"
+              Type="Then"/>
+        </sentences>
+      </then>
+    </scenarios>
+    <scenarios
+        Title="Account has insufficient balance">
+      <when>
+        <sentences
+            Text="the account holder request $">
+          <variables
+              Name="110"
+              Type="int"/>
+          <annotation
+              Text="When"
+              Type="When"/>
+        </sentences>
+      </when>
+      <given>
+        <sentences
+            Text="the acount balance is $">
+          <variables
+              Name="100"/>
+          <annotation
+              Text="Given"
+              Type="Given"/>
+        </sentences>
+      </given>
+      <then>
+        <sentences
+            Text="the ATM should not dispense money">
+          <annotation
+              Text="Then"
+              Type="Then"/>
+        </sentences>
+        <sentences
+            Text="The account balance remains the same as before">
+          <annotation
+              Text="Then"
+              Type="Then"/>
+        </sentences>
+      </then>
+    </scenarios>
+  </stories>
+</sample:Register>

@@ -1,0 +1,65 @@
+«IMPORT Java»
+
+«DEFINE main FOR Package»
+	«EXPAND class FOREACH content.typeSelect(Class)»
+«ENDDEFINE»
+
+«DEFINE class FOR Java::Class»
+	«FILE "/mde/project4/code/steps/" + this.name.replaceAll(" ","").trim() + "Steps.java"-»
+		package mde.project4.code.steps;
+		
+		import org.jbehave.core.annotations.Given;
+		import org.jbehave.core.annotations.Named;
+		import org.jbehave.core.annotations.Then;
+		import org.jbehave.core.annotations.When;
+		
+	    public class «this.name.replaceAll(" ","").trim()»Steps {
+		  «EXPAND method FOREACH this.method»
+	    }
+	    «ENDFILE-»
+  	
+  	«FILE "/mde/project4/code/stories/" + this.name.replaceAll(" ","").trim() + "Stories.java"-»
+  		package mde.project4.code.stories;
+	
+		import org.jbehave.core.configuration.Configuration;
+		import org.jbehave.core.junit.JUnitStory;
+		import org.jbehave.core.reporters.StoryReporterBuilder;
+		import org.jbehave.core.steps.InjectableStepsFactory;
+		import org.jbehave.core.steps.InstanceStepsFactory;
+	
+		import static org.jbehave.core.reporters.Format.CONSOLE;
+		import static org.jbehave.core.reporters.Format.TXT;
+		
+		import mde.project4.code.steps.«this.name.replaceAll(" ","").trim()»Steps;
+	
+		public class «this.name.replaceAll(" ","").trim()»Stories extends JUnitStory{
+			@Override
+			public Configuration configuration() {
+				return super.configuration()
+						.useStoryReporterBuilder(
+								new StoryReporterBuilder()
+									.withDefaultFormats()
+									.withFormats(CONSOLE, TXT)
+						);
+			}
+			
+			@Override
+			public InjectableStepsFactory stepsFactory() {
+				return new InstanceStepsFactory(configuration(), new «this.name.replaceAll(" ","").trim()»Steps());
+			}
+	   }
+	   «ENDFILE-»
+«ENDDEFINE»
+
+
+«DEFINE method FOR Method»
+  «EXPAND annotation FOR this.annotation»
+  public void «this.name.replaceAll(" ","_")»(«EXPAND parameter FOREACH this.parameters SEPARATOR ','») {
+    
+  }
+«ENDDEFINE»
+
+«DEFINE parameter FOR Parameter»@Named("«this.name.trim()»")«this.type.name.trim()» «this.name.trim()»«ENDDEFINE»
+«DEFINE annotation FOR Annotation»@«this.type.trim()»("«this.sentenceText.trim()»")«ENDDEFINE»
+
+

@@ -1,0 +1,37 @@
+/**
+ */
+package psample.impl;
+
+import org.eclipse.emf.ecore.EClass;
+
+import psample.PsamplePackage;
+import psample.Variable;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Variable</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * @generated
+ */
+public class VariableImpl extends MemberImpl implements Variable {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected VariableImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return PsamplePackage.Literals.VARIABLE;
+	}
+
+} //VariableImpl

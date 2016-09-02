@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated psample -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="psample.presentation.PsampleModelWizardID"
+            name="%_UI_PsampleModelWizard_label"
+            class="psample.presentation.PsampleModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PsampleModelFile.gif">
+         <description>%_UI_PsampleModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated psample -->
+      <editor
+            id="psample.presentation.PsampleEditorID"
+            name="%_UI_PsampleEditor_label"
+            icon="icons/full/obj16/PsampleModelFile.gif"
+            extensions="psample"
+            class="psample.presentation.PsampleEditor"
+            contributorClass="psample.presentation.PsampleActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

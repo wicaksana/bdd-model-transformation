@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<psample:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:psample="http://www.example.org/psample" Name="mde.project1.example1">
+  <typedelement xsi:type="psample:Class" Name="HelloWorld">
+    <member xsi:type="psample:Function" Name="Main">
+      <variable Name="greetings"/>
+      <variable Name="name"/>
+    </member>
+    <member xsi:type="psample:Function" Name="printGreetings"/>
+  </typedelement>
+  <typedelement xsi:type="psample:Class" Name="Helper">
+    <member xsi:type="psample:Function" Name="convertText"/>
+  </typedelement>
+</psample:Package>

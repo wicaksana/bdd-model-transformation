@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sample:Register
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:sample="http://www.example.org/sample"
+    Name="CalculatorApp">
+  <stories Title="Addition Operation">
+    <scenarios
+        Title="Add two valid numbers">
+      <when>
+        <sentences
+            Text="I add">
+          <variables
+              Name="number1"
+              Type="int"
+              Value="10"/>
+          <variables
+              Name="number2"
+              Type="int"
+              Value="10"/>
+          <annotation
+              Text="I add &lt;number1> and &lt;number2>  "
+              Type="When"/>
+        </sentences>
+      </when>
+      <given>
+        <sentences
+            Text="a calculator">
+          <annotation
+              Text="a calculator"
+              Type="Given"/>
+        </sentences>
+      </given>
+      <then>
+        <sentences
+            Text="the outcome should">
+          <variables
+              Name="result"
+              Type="int"
+              Value="20"/>
+          <annotation
+              Text="the outcome should &lt;result>"
+              Type="Then"/>
+        </sentences>
+      </then>
+    </scenarios>
+  </stories>
+</sample:Register>

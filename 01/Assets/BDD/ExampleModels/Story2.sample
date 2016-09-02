@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sample:Story xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:sample="http://www.example.org/sample" Role="As an Account Holder" Feature="I want to withdraw cash from an ATM" Benefit="So that I can get money when the bank is closed" Title="Account Holder withdraws cash">
+  <scenarios Title="Account has sufficient funds">
+    <when>
+      <sentence Text="the Account Holder requests $20"/>
+    </when>
+    <given>
+      <sentence Text="the account balance is $100"/>
+      <sentence Text="the card is valid"/>
+      <sentence Text="the machine contains enough money"/>
+    </given>
+    <then>
+      <sentence Text="the ATM should dispense $20"/>
+      <sentence Text="the account balance should be $80"/>
+      <sentence Text="the card should be returned"/>
+    </then>
+  </scenarios>
+  <scenarios Title="Account has insufficient funds">
+    <when>
+      <sentence Text="the Account Holder requests $20"/>
+    </when>
+    <given>
+      <sentence Text="the account balance is $10"/>
+      <sentence Text="the card is valid"/>
+      <sentence Text="the machine contains enough money"/>
+    </given>
+    <then>
+      <sentence Text="the ATM should not dispense any money"/>
+      <sentence Text="the ATM should say there are insufficient funds"/>
+      <sentence Text="the account balance should be $20"/>
+      <sentence Text="the card should be returned"/>
+    </then>
+  </scenarios>
+</sample:Story>

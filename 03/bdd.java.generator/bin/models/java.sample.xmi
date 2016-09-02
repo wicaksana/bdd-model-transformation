@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Java="uri:Java"
+    xsi:schemaLocation="uri:Java Java.ecore#/0">
+  <Java:Package name="CalculatorApp">
+    <content xsi:type="Java:Class" name="Addition Operation" isPublic="true">
+      <method name="a calculator" isPublic="true">
+        <annotation sentenceText="a calculator" type="Given"/>
+      </method>
+      <method name="i add" isPublic="true">
+        <parameters name="number1" type="/1"/>
+        <parameters name="number2" type="/2"/>
+        <annotation sentenceText="I add &lt;number1> and &lt;number2>  " type="When"/>
+      </method>
+      <method name="the outcome should" isPublic="true">
+        <parameters name="result" type="/3"/>
+        <annotation sentenceText="the outcome should &lt;result>" type="Then"/>
+      </method>
+    </content>
+  </Java:Package>
+  <Java:PrimitiveType name="int"/>
+  <Java:PrimitiveType name="int"/>
+  <Java:PrimitiveType name="int"/>
+</xmi:XMI>

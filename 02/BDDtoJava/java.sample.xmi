@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Java:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Java="uri:Java.ecore" name="Banking Application">
+  <content xsi:type="Java:Class" name="Check Account" isPublic="true">
+    <method name="the account balance is $" isPublic="true">
+      <parameters name="100"/>
+      <annotation sentenceText="Given" type="Given"/>
+    </method>
+    <method name="the acount balance is $" isPublic="true">
+      <parameters name="100"/>
+      <annotation sentenceText="Given" type="Given"/>
+    </method>
+    <method name="the account holder request $" isPublic="true">
+      <parameters name="20"/>
+      <annotation sentenceText="When" type="When"/>
+    </method>
+    <method name="the account holder request $" isPublic="true">
+      <parameters name="110"/>
+      <annotation sentenceText="When" type="When"/>
+    </method>
+    <method name="the atm should dispense $" isPublic="true">
+      <parameters name="20"/>
+      <annotation sentenceText="Then" type="Then"/>
+    </method>
+    <method name="the account balance should $" isPublic="true">
+      <parameters name="80"/>
+      <annotation sentenceText="Then" type="Then"/>
+    </method>
+    <method name="the atm should not dispense money" isPublic="true">
+      <annotation sentenceText="Then" type="Then"/>
+    </method>
+    <method name="the account balance remains the same as before" isPublic="true">
+      <annotation sentenceText="Then" type="Then"/>
+    </method>
+  </content>
+</Java:Package>

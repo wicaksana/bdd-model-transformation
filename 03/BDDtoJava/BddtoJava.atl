@@ -1,0 +1,90 @@
+-- @path Java=/BDDtoJava/java.ecore
+-- @path Bdd=/BDDtoJava/bdd.ecore
+
+module BddtoJava;
+create OUT : Java from IN : Bdd;
+
+uses strings; 
+
+rule BddRegister2JavaPackage {
+	from
+		s: Bdd!Register
+	to
+		t: Java!Package (
+			name <- s.Name,
+			content <- s.stories->select(i | i.oclIsTypeOf(Bdd!Story))->
+						collect(e | thisModule.Story2Class(e))
+			)
+}	
+
+lazy rule Story2Class{
+	from
+		s: Bdd!Story
+	to
+		t:Java!Class (name <- s.Title,
+			isPublic <- true,
+			method <- s.getGiven()->collect(i | i.generateGivenMethods()).		
+			append(s.getWhen()->collect(i | i.generateWhenMethods())).
+			append(s.getThen()->collect(i | i.generateThenMethods()))
+		)
+}
+
+lazy rule Sentence2Method{
+	from
+		s: Bdd!Sentence
+	to
+		t: Java!Method(
+			isPublic <- true,
+			name <- s.getMethodName(),
+			parameters <- s.variables->collect(v | thisModule.SentenceVariable2Parameter(v)),
+			annotation <- thisModule.SentenceAnnotation2JavaAnnotation(s.annotation)
+		)
+}
+
+lazy rule SentenceVariable2Parameter{
+	from
+		s: Bdd!Variable
+	to
+		t: Java!Parameter(
+			name <- s.Name,
+			type <- type
+		),
+		type: Java!PrimitiveType( name <- s.Type)
+}
+
+lazy rule SentenceAnnotation2JavaAnnotation{
+	from 
+		s: Bdd!Annotation
+	to
+		t: Java!Annotation(
+			sentenceText <- s.Text,
+			type <- s.Type
+		)
+}
+	
+---To generate modified method name
+helper context Bdd!Sentence def: getMethodName() : String = 
+	self.Text.toLower();		
+
+---For collecting indvidual components of stories from scenarios
+helper context Bdd!Story def : getGiven() : Sequence(Bdd!Given) = 
+ 	self.scenarios->collect(e | e.given)->asSequence();
+
+helper context Bdd!Story def : getWhen() : Sequence(Bdd!Sentence) = 
+ 	self.scenarios->collect(e | e.when)->asSequence();
+
+helper context Bdd!Story def : getThen() : Sequence(Bdd!Then) = 
+ 	self.scenarios->collect(e | e.then)->asSequence();
+
+
+---For generating methods from sentences 
+helper context Bdd!Given def : generateGivenMethods() : Sequence(Java!Method) = 
+	self.sentences->collect(i | thisModule.Sentence2Method(i));
+
+helper context Bdd!When def : generateWhenMethods() : Sequence(Java!Method) = 
+	self.sentences->collect(i | thisModule.Sentence2Method(i));
+
+helper context Bdd!Then def : generateThenMethods() : Sequence(Java!Method) = 
+	self.sentences->collect(i | thisModule.Sentence2Method(i));
+	
+

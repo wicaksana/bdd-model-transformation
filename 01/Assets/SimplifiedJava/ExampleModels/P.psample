@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<psample:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:psample="http://www.example.org/psample" Name="MDE">
+  <typedelement xsi:type="psample:Class" Name="Program">
+    <member xsi:type="psample:Function">
+      <variable Name="A"/>
+    </member>
+    <member xsi:type="psample:Function">
+      <primitivetypevariable Name="I"/>
+    </member>
+  </typedelement>
+  <typedelement xsi:type="psample:Class" Name="Test">
+    <member xsi:type="psample:Function" Name="Run"/>
+  </typedelement>
+</psample:Package>

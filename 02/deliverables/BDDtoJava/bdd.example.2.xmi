@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sample:Register
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:sample="http://www.example.org/sample"
+    Name="ScrumPractices">
+  <stories Title="Dashboard">
+    <scenarios
+        Title="Bug Tracking Disabled">
+      <when>
+        <sentences
+            Text="Navigate to lead cycle time report">
+          <annotation
+              Text="Navigate to lead cycle time report"
+              Type="When"/>
+        </sentences>
+      </when>
+      <given>
+        <sentences
+            Text="The bug tracking practice is disabled">
+          <annotation
+              Text="The bug tracking practice is disabled"
+              Type="Given"/>
+        </sentences>
+      </given>
+      <then>
+        <sentences
+            Text="Open lead time chart">
+          <annotation
+              Text="Open lead time chart"
+              Type="Then"/>
+        </sentences>
+      </then>
+    </scenarios>
+    <scenarios
+        Title="Bug Tracking Enabled">
+      <when>
+        <sentences
+            Text="Navigate to lead cycle time report">
+          <annotation
+              Text="Navigate to lead cycle time report"
+              Type="When"/>
+        </sentences>
+      </when>
+      <given>
+        <sentences
+            Text="The bug tracking practice is enabled">
+          <annotation
+              Text="The bug tracking practice is disabled"
+              Type="Given"/>
+        </sentences>
+      </given>
+      <then>
+        <sentences
+            Text="Open lead time chart with 2 lines">
+          <variables
+              Name="NumberOfLines"
+              Type="Number"/>
+          <annotation
+              Text="Open lead time chart with 2 lines"
+              Type="Then"/>
+        </sentences>
+      </then>
+    </scenarios>
+  </stories>
+</sample:Register>

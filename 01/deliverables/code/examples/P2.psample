@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<psample:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:psample="http://www.example.org/psample" Name="ATM">
+  <typedelement xsi:type="psample:Class" Name="Account">
+    <member xsi:type="psample:Function" Name="CheckBalance"/>
+    <member xsi:type="psample:Function" Name="IsCardValid"/>
+    <member xsi:type="psample:Function" Name="IsATMHaveBalance"/>
+    <member xsi:type="psample:Function" Name="DispenseMoney"/>
+    <member xsi:type="psample:Function" Name="DeductMoney"/>
+    <member xsi:type="psample:Function" Name="ReturnCard"/>
+    <member xsi:type="psample:Function" Name="ShowInsufficientBalanceMessage"/>
+  </typedelement>
+</psample:Package>

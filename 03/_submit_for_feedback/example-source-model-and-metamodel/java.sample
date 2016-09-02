@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "Java Java.ecore" xmlns:Java="Java">
+  <Java:Package name="ScrumPractices">
+    <content xsi:type="Java:Class" name="Dashboard" isPublic="true">
+      <method name="the bug tracking practice is disabled" isPublic="true">
+        <annotation sentenceText="The bug tracking practice is disabled" type="Given"/>
+      </method>
+      <method name="the bug tracking practice is enabled" isPublic="true">
+        <annotation sentenceText="The bug tracking practice is disabled" type="Given"/>
+      </method>
+      <method name="navigate to lead cycle time report" isPublic="true">
+        <annotation sentenceText="Navigate to lead cycle time report" type="When"/>
+      </method>
+      <method name="navigate to lead cycle time report" isPublic="true">
+        <annotation sentenceText="Navigate to lead cycle time report" type="When"/>
+      </method>
+      <method name="open lead time chart" isPublic="true">
+        <annotation sentenceText="Open lead time chart" type="Then"/>
+      </method>
+      <method name="open lead time chart with 2 lines" isPublic="true">
+        <parameters name="NumberOfLines" type="/1" defaultValue="2"/>
+        <annotation sentenceText="Open lead time chart with 2 lines" type="Then"/>
+      </method>
+    </content>
+  </Java:Package>
+  <Java:PrimitiveType name="int"/>
+</xmi:XMI>

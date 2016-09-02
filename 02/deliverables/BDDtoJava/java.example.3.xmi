@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Java:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Java="uri:Java.ecore" name="ScrumPractices">
+  <content xsi:type="Java:Class" name="UserLogin" isPublic="true">
+    <method name="the login form is validated" isPublic="true">
+      <annotation sentenceText="The login form is validated" type="Given"/>
+    </method>
+    <method name="the user clicks login button" isPublic="true">
+      <annotation sentenceText="The user clicks login button" type="When"/>
+    </method>
+    <method name="load login success message" isPublic="true">
+      <annotation sentenceText="Load login success message" type="Then"/>
+    </method>
+    <method name="load dashboard" isPublic="true">
+      <annotation sentenceText="Load dashboard" type="Then"/>
+    </method>
+  </content>
+  <content xsi:type="Java:Class" name="UserRegistration" isPublic="true">
+    <method name="the registration form is validated" isPublic="true">
+      <annotation sentenceText="The registration form is validated" type="Given"/>
+    </method>
+    <method name="the visitor clicks the register button" isPublic="true">
+      <annotation sentenceText="The visitor clicks the register button" type="When"/>
+    </method>
+    <method name="load registration success message" isPublic="true">
+      <annotation sentenceText="Load registration success message" type="Then"/>
+    </method>
+  </content>
+</Java:Package>

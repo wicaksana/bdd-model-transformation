@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sample:Register
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:sample="http://www.example.org/sample"
+    Name="ScrumPractices">
+  <stories Title="UserLogin">
+    <scenarios
+        Title="Users are able to log in">
+      <when>
+        <sentences
+            Text="The user clicks login button">
+          <annotation
+              Text="The user clicks login button"
+              Type="When"/>
+        </sentences>
+      </when>
+      <given>
+        <sentences
+            Text="The login form is validated">
+          <annotation
+              Text="The login form is validated"
+              Type="Given"/>
+        </sentences>
+      </given>
+      <then>
+        <sentences
+            Text="Load login success message">
+          <annotation
+              Text="Load login success message"
+              Type="Then"/>
+        </sentences>
+        <sentences
+            Text="Load dashboard">
+          <annotation
+              Text="Load dashboard"
+              Type="Then"/>
+        </sentences>
+      </then>
+    </scenarios>
+  </stories>
+  <stories Title="UserRegistration">
+    <scenarios
+        Title=" Visitors are able to register">
+      <when>
+        <sentences
+            Text="The visitor clicks the register button">
+          <annotation
+              Text="The visitor clicks the register button"
+              Type="When"/>
+        </sentences>
+      </when>
+      <given>
+        <sentences
+            Text="The registration form is validated">
+          <annotation
+              Text="The registration form is validated"
+              Type="Given"/>
+        </sentences>
+      </given>
+      <then>
+        <sentences
+            Text="Load registration success message">
+          <annotation
+              Text="Load registration success message"
+              Type="Then"/>
+        </sentences>
+      </then>
+    </scenarios>
+  </stories>
+</sample:Register>

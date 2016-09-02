@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Sample/src" modelPluginID="Sample" modelName="Sample"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>sample.ecore</foreignModel>
+  <genPackages prefix="Sample" basePackage="com.mde" disposableProviderFactory="true"
+      ecorePackage="sample.ecore#/">
+    <genClasses ecoreClass="sample.ecore#//Story">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference sample.ecore#//Story/scenarios"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sample.ecore#//Story/Role"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sample.ecore#//Story/Feature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sample.ecore#//Story/Benefit"/>
+    </genClasses>
+    <genClasses ecoreClass="sample.ecore#//Scenario">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference sample.ecore#//Scenario/when"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference sample.ecore#//Scenario/given"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference sample.ecore#//Scenario/then"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sample.ecore#//Scenario/Title"/>
+    </genClasses>
+    <genClasses ecoreClass="sample.ecore#//When">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sample.ecore#//When/sentence"/>
+    </genClasses>
+    <genClasses ecoreClass="sample.ecore#//Given">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sample.ecore#//Given/sentence"/>
+    </genClasses>
+    <genClasses ecoreClass="sample.ecore#//Then">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sample.ecore#//Then/sentence"/>
+    </genClasses>
+    <genClasses ecoreClass="sample.ecore#//Sentence">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sample.ecore#//Sentence/Text"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
